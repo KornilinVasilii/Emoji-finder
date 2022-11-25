@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter',sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 986px;
+  margin: 0 auto;
+}
+.header {
+  background: linear-gradient(92.33deg, #087990 0.12%, #055160 100%);
+  padding-top: 68px;
+  padding-bottom: 100px;
+  border-bottom:  1px solid #DEE2E6;
+}
+.title {
+  text-align: center;
+  color: #CFF4FC;
+  font-size: 72px;
+  font-weight: 700;
+}
+.sub_title {
+  margin-top: 4px;
+  text-align: center;
+  color: #CFF4FC;
+  font-size: 21px;
+  
+}
+.emoji {
+  position: relative
+}
+input {
+  top: 186px;
+  position: absolute;
+  padding: 22px 502px 21px 32px;  
+  left: 50%;
+  content: "";
+  display: block;
+  transform: translate(-50%);
+  border: 1px solid #DEE2E6;
+  border-radius: 4px;
+}
+input::placeholder {
+  color: #ABB5BE;
+  font-size: 24px;
+}
+input:focus {
+  outline: none;
+}
+.main {
+  background:#f0f0f1;
+  max-height: max-content;
+}
+.cards {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 19px;
+}
+.emoji_cards {
+  text-align: center;
+  padding: 24px;
+  background-color: #ffffff;
+  max-width: 316px;
+}
+.emoji__cards_title {
+  margin-top: 18px;
+  margin-bottom: 12px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: underline solid black 2px;
+}
+.emoji__cards_subtitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #3F444A;
+}
+.emoji__cards_img {
+  font-size: 48px;
+  line-height: 48px;
+}
+.footer {
+  text-align: center;
+  background: #f0f0f1;
+}
+.footer_title {
+  border-top: 1px solid #DEE2E6;
+  padding-top: 13px;
+  padding-bottom: 17px;
+  color: #6C757D;
+  font-size: 16px;
+}
