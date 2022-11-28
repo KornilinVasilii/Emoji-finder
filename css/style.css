@@ -61,7 +61,8 @@ input:focus {
   padding-bottom: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 19px;
+  row-gap: 22px;
+  column-gap: 19px;
 }
 .emoji_cards {
   text-align: center;
