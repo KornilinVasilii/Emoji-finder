@@ -1,16 +1,8 @@
 import { data } from "./emoji.js"
 
-// console.log(data)
-// const container = document.querySelectorAll('.container')
-// console.log(container)
-// container[1].append(creatCards()) 
-// container[1].append(creatCards()) 
-// container[1].append(creatCards()) 
-// container[1].append(creatCards()) 
-// container[1].append(creatCards()) 
-// container[1].append(creatCards()) 
-
 const cardsWrapper = document.querySelector('.cards')
+const input = document.querySelector('input')
+const newData = doubleDelet(data)
 
 function creatCards(obj) { 
   const card = document.createElement('div')
@@ -32,12 +24,24 @@ function creatCards(obj) {
  
   return card
 }
-console.log(cardsWrapper);
 
-
-data.forEach((elem) => { 
+  newData.forEach((elem) => { 
   cardsWrapper.append(creatCards(elem))
 })
 
 
- 
+function searchData() { 
+  const emj = newData.filter((el) => el.title.toLowerCase().includes(input.value.trim().toLowerCase())
+   || el.keywords.toLowerCase().includes(input.value.trim().toLowerCase())) 
+  cardsWrapper.innerHTML = ''
+  emj.forEach(e => cardsWrapper.append(creatCards(e))) 
+}
+
+function doubleDelet(data) { 
+  return data.map((elem) => ({ ...elem, keywords: 
+    [...new Set(elem.keywords.split(' '))].join(' ') }))
+}
+
+input.addEventListener('input', searchData)
+
+
