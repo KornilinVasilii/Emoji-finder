@@ -1,8 +1,21 @@
-import { data } from "./emoji.js"
+// import { data } from "./emoji.js"
 
 const cardsWrapper = document.querySelector('.cards')
 const input = document.querySelector('input')
-const newData = doubleDelet(data)
+
+
+const data = await emojiHendler()
+
+ async function emojiHendler() { 
+  const response = await fetch('https://emoji.ymatuhin.workers.dev/') 
+  const data = await response.json()
+  return data
+}
+
+emojiHendler()
+
+ const newData = doubleDelet(data)
+
 
 function creatCards(obj) { 
   const card = document.createElement('div')
@@ -31,8 +44,9 @@ function creatCards(obj) {
 
 
 function searchData() { 
-  const emj = newData.filter((el) => el.title.toLowerCase().includes(input.value.trim().toLowerCase())
-   || el.keywords.toLowerCase().includes(input.value.trim().toLowerCase())) 
+  const emj = newData.filter((el) =>
+    el.title.toLowerCase().includes(input.value.trim().toLowerCase()) ||
+    el.keywords.toLowerCase().includes(input.value.trim().toLowerCase())) 
   cardsWrapper.innerHTML = ''
   emj.forEach(e => cardsWrapper.append(creatCards(e))) 
 }
